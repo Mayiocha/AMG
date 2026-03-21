@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.amg">
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/Theme.AMG">
+
+        <activity android:name=".HistorialTolvaActivity" />
+        <activity android:name=".AgregarMezclaActivity" />
+        <activity android:name=".AgregarComidaActivity" />
+        <activity android:name=".InventarioComidasActivity" />
+        <activity android:name=".ComidasActivity" />
+        <activity android:name=".AnimalesActivity" android:exported="false" />
+        <activity android:name=".DetalleAnimalActivity" android:exported="false" />
+        <activity android:name=".AgregarAnimalActivity" android:exported="false" />
+        <activity android:name=".ListaMezclasActivity" />
+        <activity android:name=".ConfiguracionTolvaActivity"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

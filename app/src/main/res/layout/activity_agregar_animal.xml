@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1F6B3A"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="20dp"
+            android:elevation="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Animal"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#1F6B3A"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro general del animal"
+                android:textSize="14sp"
+                android:textColor="#5F6B5F"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Identificación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F4F7F4"
+                android:padding="14dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Identificación"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#1F6B3A"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvIdInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID: AUTO-001"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etArete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Número de Arete"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spSexo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etFechaNacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de nacimiento"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spLote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Productivo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F4F7F4"
+                android:padding="14dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Productivo"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#1F6B3A"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/etPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Peso actual (kg)"
+                    android:inputType="numberDecimal"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etMeses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Meses"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etMesIngreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mes de ingreso"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spEstadoProductivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spEstadoSanitario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Información adicional -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F4F7F4"
+                android:padding="14dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Información Adicional"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#1F6B3A"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/etRaza"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Raza"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etAlimentacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Alimentación"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etEstadoReproductivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Estado reproductivo"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etObservaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:hint="Observaciones"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:background="#FFFFFF"
+                    android:padding="12dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGuardarAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1F6B3A"
+                android:padding="14dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnCancelarAnimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:textStyle="bold"
+                android:padding="14dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E7D32"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="24dp"
+                android:elevation="8dp"
+                android:clipToOutline="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Detalle del Animal"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arete"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvArete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Raza"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvRaza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sexo"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvSexo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Peso"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvPeso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Meses"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvMeses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mes de ingreso"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvMesIngreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lote"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvLote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de nacimiento"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvFechaNacimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado reproductivo"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvEstadoReproductivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alimentación"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvAlimentacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvObservaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:clipToOutline="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado sanitario"
+                        android:textStyle="bold"
+                        android:textColor="#616161"/>
+
+                    <TextView
+                        android:id="@+id/tvEstadoSanitario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

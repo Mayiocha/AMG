@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <bitmap
+            android:src="@drawable/fondo_ganado"
+            android:scaleType="centerCrop"/>
+    </item>
+
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#AA000000"
+                android:endColor="#66000000"
+                android:angle="90"/>
+        </shape>
+    </item>
+
+</layer-list>

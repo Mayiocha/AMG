@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E7D32"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvTituloComidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comidas y Mezclas"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnInventario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inventario de Comidas"
+            android:layout_marginBottom="16dp"
+            android:padding="14dp"/>
+
+        <Button
+            android:id="@+id/btnNuevaCarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mezclas"
+            android:layout_marginBottom="16dp"
+            android:padding="14dp"/>
+
+        <Button
+            android:id="@+id/btnHistorialTolva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historial de Tolva"
+            android:layout_marginBottom="16dp"
+            android:padding="14dp"/>
+
+        <Button
+            android:id="@+id/btnListaMezclas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Mezclas"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:padding="14dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>
