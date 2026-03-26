@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E7D32"
+    android:background="@color/green_primary"
+    android:fitsSystemWindows="true"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
     android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:orientation="vertical"
-        android:background="#FFFFFF"
+        android:background="@drawable/bg_card"
         android:elevation="8dp"
         android:padding="24dp">
 
@@ -20,50 +24,76 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Comidas y Mezclas"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="#2E7D32"
+            android:textColor="@color/green_primary"
             android:gravity="center"
-            android:layout_marginBottom="24dp"/>
+            android:letterSpacing="0.02"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gestión de insumos y dietas"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:gravity="center"
+            android:layout_marginBottom="28dp"/>
 
         <Button
             android:id="@+id/btnInventario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Inventario de Comidas"
-            android:layout_marginBottom="16dp"
-            android:padding="14dp"/>
+            android:layout_height="56dp"
+            android:text="INVENTARIO DE COMIDAS"
+            android:textStyle="bold"
+            android:backgroundTint="@color/green_primary"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="16dp"/>
 
         <Button
             android:id="@+id/btnNuevaCarga"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mezclas"
-            android:layout_marginBottom="16dp"
-            android:padding="14dp"/>
+            android:layout_height="56dp"
+            android:text="GESTIÓN DE MEZCLAS"
+            android:textStyle="bold"
+            android:backgroundTint="@color/green_primary"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="16dp"/>
 
         <Button
             android:id="@+id/btnHistorialTolva"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Historial de Tolva"
-            android:layout_marginBottom="16dp"
-            android:padding="14dp"/>
+            android:layout_height="56dp"
+            android:text="HISTORIAL DE TOLVA"
+            android:textStyle="bold"
+            android:backgroundTint="@color/green_primary"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="16dp"/>
 
         <Button
             android:id="@+id/btnListaMezclas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ver Mezclas"
-            android:layout_marginTop="12dp"/>
+            android:layout_height="56dp"
+            android:text="VER MEZCLAS ACTIVAS"
+            android:textStyle="bold"
+            android:backgroundTint="@color/green_primary"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="24dp"/>
 
         <Button
             android:id="@+id/btnVolver"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Volver"
-            android:padding="14dp"/>
+            android:layout_height="56dp"
+            android:text="VOLVER"
+            android:textStyle="bold"
+            android:backgroundTint="#8E8E8E"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"/>
 
     </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

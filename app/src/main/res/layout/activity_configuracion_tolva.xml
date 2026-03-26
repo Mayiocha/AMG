@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F6B3A"
-    android:padding="16dp">
+    android:background="@color/green_primary"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#FFFFFF"
-            android:padding="24dp"
-            android:elevation="10dp">
+            android:background="@drawable/bg_card"
+            android:elevation="8dp"
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Configuración de Tolva"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                android:textColor="#1F6B3A"
+                android:textColor="@color/green_primary"
                 android:gravity="center"
+                android:letterSpacing="0.02"
                 android:layout_marginBottom="24dp"/>
 
-            <!-- Mezcla -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#F4F7F4"
-                android:padding="14dp"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
                 android:layout_marginBottom="14dp">
 
                 <TextView
@@ -44,34 +44,37 @@
                     android:layout_height="wrap_content"
                     android:text="Mezcla seleccionada"
                     android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="#5F6B5F"/>
+                    android:textSize="13sp"
+                    android:textColor="#555555"
+                    android:letterSpacing="0.01"/>
 
                 <TextView
                     android:id="@+id/tvMezclaSeleccionada"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mezcla Engorda 1"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="10dp"/>
+                    android:textColor="@color/black"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="12dp"/>
 
                 <Button
                     android:id="@+id/btnSeleccionarMezcla"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Seleccionar mezcla"/>
+                    android:text="Cambiar Mezcla"
+                    android:backgroundTint="@color/green_light"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Hora -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#F4F7F4"
-                android:padding="14dp"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
                 android:layout_marginBottom="14dp">
 
                 <TextView
@@ -79,34 +82,36 @@
                     android:layout_height="wrap_content"
                     android:text="Hora de dispensado"
                     android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="#5F6B5F"/>
+                    android:textSize="13sp"
+                    android:textColor="#555555"/>
 
                 <TextView
                     android:id="@+id/tvHora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="08:00 AM"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="10dp"/>
+                    android:textColor="@color/black"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="12dp"/>
 
                 <Button
                     android:id="@+id/btnSeleccionarHora"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Seleccionar hora"/>
+                    android:text="Ajustar Horario"
+                    android:backgroundTint="@color/green_light"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Cantidad -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#F4F7F4"
-                android:padding="14dp"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
                 android:layout_marginBottom="14dp">
 
                 <TextView
@@ -114,99 +119,78 @@
                     android:layout_height="wrap_content"
                     android:text="Cantidad a dispensar"
                     android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="#5F6B5F"/>
+                    android:textSize="13sp"
+                    android:textColor="#555555"/>
 
                 <TextView
                     android:id="@+id/tvCantidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="25 kg"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="10dp"/>
+                    android:textColor="@color/black"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="12dp"/>
 
                 <Button
                     android:id="@+id/btnCantidadTolva"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Configurar cantidad"/>
+                    android:text="Configurar kg"
+                    android:backgroundTint="@color/green_light"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
-            <!-- Estado -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#F4F7F4"
-                android:padding="14dp"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
                 android:layout_marginBottom="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Estado"
+                    android:text="Estado del Sistema"
                     android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:textColor="#5F6B5F"/>
+                    android:textSize="13sp"
+                    android:textColor="#555555"/>
 
                 <TextView
                     android:id="@+id/tvEstado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Activo"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"
-                    android:paddingTop="6dp"
-                    android:paddingBottom="10dp"/>
+                    android:textColor="@color/green_primary"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="12dp"/>
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/swTolvaActiva"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tolva activa"
+                    android:text="Activar Dispensador Automático"
                     android:checked="true"
-                    android:textColor="#111111"
-                    app:switchPadding="12dp"/>
-            </LinearLayout>
-
-            <!-- Resumen -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#EAF4EC"
-                android:padding="14dp"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Resumen actual"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
-                    android:textColor="#1F6B3A"
-                    android:layout_marginBottom="8dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="La tolva está configurada con la mezcla seleccionada, una hora de dispensado y una cantidad definida."
-                    android:textSize="14sp"
-                    android:textColor="#333333"/>
+                    app:thumbTint="@color/green_primary"
+                    app:trackTint="@color/green_light"
+                    app:switchPadding="12dp"/>
             </LinearLayout>
 
             <Button
                 android:id="@+id/btnVolverConfiguracion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Volver"
+                android:layout_height="56dp"
+                android:text="VOLVER AL PANEL"
                 android:textStyle="bold"
-                android:padding="14dp"/>
+                android:backgroundTint="#8E8E8E"
+                app:cornerRadius="8dp"/>
         </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

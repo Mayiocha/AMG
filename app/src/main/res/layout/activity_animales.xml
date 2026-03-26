@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F6B3A"
+    android:background="@color/green_primary"
+    android:fitsSystemWindows="true"> <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:padding="16dp">
 
     <LinearLayout
@@ -15,9 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_card"
             android:padding="20dp"
-            android:elevation="10dp">
+            android:elevation="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -25,24 +29,24 @@
                 android:text="Gestión de Animales"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#1F6B3A"
+                android:textColor="@color/green_primary"
                 android:gravity="center"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Consulta y administración del ganado"
                 android:textSize="14sp"
-                android:textColor="#5F6B5F"
+                android:textColor="#757575"
                 android:gravity="center"
                 android:layout_marginBottom="20dp"/>
 
             <Spinner
                 android:id="@+id/spinnerLote"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F4F7F4"
+                android:layout_height="48dp"
+                android:background="@drawable/borde_celda"
                 android:padding="10dp"
                 android:layout_marginBottom="14dp"/>
 
@@ -50,74 +54,48 @@
                 android:id="@+id/btnAgregarAnimal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Agregar Animal"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#1F6B3A"
+                android:text="+ AGREGAR NUEVO ANIMAL"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_primary"
                 android:textStyle="bold"
                 android:padding="14dp"
+                app:cornerRadius="8dp"
                 android:layout_marginBottom="18dp"/>
 
-            <LinearLayout
+            <TableLayout
+                android:id="@+id/tableAnimales"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#F8F8F8"
-                android:padding="10dp">
+                android:stretchColumns="*"
+                android:background="@color/white">
 
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fillViewport="true">
-
-                    <TableLayout
-                        android:id="@+id/tableAnimales"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:stretchColumns="*"
-                        android:divider="#D0D0D0"
-                        android:showDividers="middle">
-
-                        <TableRow
-                            android:background="#1F6B3A">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ID"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold"
-                                android:textSize="15sp"
-                                android:gravity="center"
-                                android:padding="12dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Tipo"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold"
-                                android:textSize="15sp"
-                                android:gravity="center"
-                                android:padding="12dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Peso"
-                                android:textColor="#FFFFFF"
-                                android:textStyle="bold"
-                                android:textSize="15sp"
-                                android:gravity="center"
-                                android:padding="12dp"/>
-
-                        </TableRow>
-
-                    </TableLayout>
-
-                </ScrollView>
-            </LinearLayout>
-
+                <TableRow
+                    android:background="@color/green_primary"
+                    android:padding="4dp">
+                    <TextView
+                        android:text="ARETE"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:padding="12dp"/>
+                    <TextView
+                        android:text="TIPO"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:padding="12dp"/>
+                    <TextView
+                        android:text="PESO"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:padding="12dp"/>
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

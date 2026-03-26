@@ -4,7 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:theme="@style/Theme.AMG">
+        android:theme="@style/Theme.AMG"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
 
         <activity android:name=".HistorialTolvaActivity" />
         <activity android:name=".AgregarMezclaActivity" />
