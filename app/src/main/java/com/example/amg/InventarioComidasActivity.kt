@@ -1,18 +1,23 @@
 package com.example.amg
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.view.Gravity
+import android.widget.Button
+import android.widget.TableLayout
+import android.widget.TableRow
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.amg.data.AdminSQLiteOpenHelper
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class InventarioComidasActivity : AppCompatActivity() {
 
     private lateinit var dbHelper: AdminSQLiteOpenHelper
+    private lateinit var tableInventario: TableLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,31 +31,73 @@ class InventarioComidasActivity : AppCompatActivity() {
         }
 
         dbHelper = AdminSQLiteOpenHelper(this)
-        val listView = findViewById<ListView>(R.id.listViewComidas)
-        val fabAgregar = findViewById<FloatingActionButton>(R.id.fabAgregar)
+        tableInventario = findViewById(R.id.tableInventario)
+        val btnAgregar = findViewById<Button>(R.id.btnAgregarComida)
+        val btnVolver = findViewById<Button>(R.id.btnVolver)
 
-        actualizarLista(listView)
+        actualizarTabla()
 
-        fabAgregar.setOnClickListener {
+        btnAgregar.setOnClickListener {
             startActivity(Intent(this, AgregarComidaActivity::class.java))
+        }
+
+        btnVolver.setOnClickListener {
+            finish()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        val listView = findViewById<ListView>(R.id.listViewComidas)
-        actualizarLista(listView)
+        actualizarTabla()
     }
 
-    private fun actualizarLista(listView: ListView) {
-        // Obtenemos los datos reales de la BD
-        val datosBD = dbHelper.getAllInventory().map { it.second }
+    private fun actualizarTabla() {
+        // Limpiamos las filas previas excepto el encabezado (índice 0)
+        if (tableInventario.childCount > 1) {
+            tableInventario.removeViews(1, tableInventario.childCount - 1)
+        }
 
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            datosBD
-        )
-        listView.adapter = adapter
+        val inventoryItems = dbHelper.getInventoryDetails()
+
+        for (item in inventoryItems) {
+            val row = TableRow(this).apply {
+                setBackgroundResource(R.drawable.borde_celda)
+                val params = TableLayout.LayoutParams(
+                    TableLayout.LayoutParams.MATCH_PARENT,
+                    TableLayout.LayoutParams.WRAP_CONTENT
+                )
+                params.setMargins(0, 4, 0, 4)
+                layoutParams = params
+            }
+
+            val tvNombre = TextView(this).apply {
+                text = item.first
+                setTextColor(ContextCompat.getColor(context, R.color.black))
+                setTypeface(null, Typeface.BOLD)
+                setPadding(16, 28, 16, 28)
+                gravity = Gravity.CENTER
+            }
+
+            val tvUnidad = TextView(this).apply {
+                text = item.third
+                setTextColor(ContextCompat.getColor(context, R.color.black))
+                setPadding(16, 28, 16, 28)
+                gravity = Gravity.CENTER
+            }
+
+            val tvCantidad = TextView(this).apply {
+                text = item.second.toString()
+                setTextColor(ContextCompat.getColor(context, R.color.green_primary))
+                setTypeface(null, Typeface.BOLD)
+                setPadding(16, 28, 16, 28)
+                gravity = Gravity.CENTER
+            }
+
+            row.addView(tvNombre)
+            row.addView(tvUnidad)
+            row.addView(tvCantidad)
+
+            tableInventario.addView(row)
+        }
     }
 }

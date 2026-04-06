@@ -12,6 +12,12 @@ class AgregarComidaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_comida)
 
+        androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { v, insets ->
+            val systemBars = insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
         val etNombre = findViewById<EditText>(R.id.etNombreComida)
         val etTipo = findViewById<EditText>(R.id.etTipoComida)
         val etCantidad = findViewById<EditText>(R.id.etCantidadComida)

@@ -33,9 +33,14 @@ class ConfiguracionTolvaActivity : AppCompatActivity() {
         val btnCantidadTolva = findViewById<Button>(R.id.btnCantidadTolva)
         val swTolvaActiva = findViewById<SwitchCompat>(R.id.swTolvaActiva)
         val btnVolver = findViewById<Button>(R.id.btnVolverConfiguracion)
+        val btnHistorialTolva = findViewById<Button>(R.id.btnHistorialTolva)
 
         // Estado inicial
         actualizarEstadoVisual(swTolvaActiva.isChecked, tvEstado)
+
+        btnHistorialTolva.setOnClickListener {
+            startActivity(android.content.Intent(this, HistorialTolvaActivity::class.java))
+        }
 
         btnSeleccionarMezcla.setOnClickListener {
             Toast.makeText(this, "Módulo de mezclas próximamente", Toast.LENGTH_SHORT).show()

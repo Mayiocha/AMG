@@ -133,4 +133,17 @@ class AdminSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "joee"
         cursor.close()
         return list
     }
+
+    fun getInventoryDetails(): List<Triple<String, Float, String>> {
+        val list = mutableListOf<Triple<String, Float, String>>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT name, quantity, unit FROM inventory", null)
+        if (cursor.moveToFirst()) {
+            do {
+                list.add(Triple(cursor.getString(0), cursor.getFloat(1), cursor.getString(2)))
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return list
+    }
 }

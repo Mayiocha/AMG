@@ -15,182 +15,216 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/bg_card"
-            android:elevation="8dp"
-            android:padding="24dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Configuración de Tolva"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:textColor="@color/green_primary"
-                android:gravity="center"
-                android:letterSpacing="0.02"
-                android:layout_marginBottom="24dp"/>
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/grayBackground"
-                android:padding="16dp"
-                android:layout_marginBottom="14dp">
+                android:background="@drawable/bg_card"
+                android:elevation="8dp"
+                android:padding="16dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mezcla seleccionada"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#555555"
-                    android:letterSpacing="0.01"/>
-
-                <TextView
-                    android:id="@+id/tvMezclaSeleccionada"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mezcla Engorda 1"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="12dp"/>
-
-                <Button
-                    android:id="@+id/btnSeleccionarMezcla"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cambiar Mezcla"
-                    android:backgroundTint="@color/green_light"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/grayBackground"
-                android:padding="16dp"
-                android:layout_marginBottom="14dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hora de dispensado"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#555555"/>
-
-                <TextView
-                    android:id="@+id/tvHora"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="08:00 AM"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="12dp"/>
-
-                <Button
-                    android:id="@+id/btnSeleccionarHora"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ajustar Horario"
-                    android:backgroundTint="@color/green_light"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/grayBackground"
-                android:padding="16dp"
-                android:layout_marginBottom="14dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cantidad a dispensar"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#555555"/>
-
-                <TextView
-                    android:id="@+id/tvCantidad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="25 kg"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="12dp"/>
-
-                <Button
-                    android:id="@+id/btnCantidadTolva"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Configurar kg"
-                    android:backgroundTint="@color/green_light"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/grayBackground"
-                android:padding="16dp"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Estado del Sistema"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#555555"/>
-
-                <TextView
-                    android:id="@+id/tvEstado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Activo"
-                    android:textSize="18sp"
+                    android:text="Configuración de Tolva"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="@color/green_primary"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="12dp"/>
+                    android:gravity="center"
+                    android:letterSpacing="0.02"
+                    android:layout_marginBottom="2dp"/>
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/swTolvaActiva"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Activar Dispensador Automático"
-                    android:checked="true"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    app:thumbTint="@color/green_primary"
-                    app:trackTint="@color/green_light"
-                    app:switchPadding="12dp"/>
-            </LinearLayout>
+                    android:text="Control de dispensado automático"
+                    android:textSize="13sp"
+                    android:textColor="#757575"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
 
-            <Button
-                android:id="@+id/btnVolverConfiguracion"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="VOLVER AL PANEL"
-                android:textStyle="bold"
-                android:backgroundTint="#8E8E8E"
-                app:cornerRadius="8dp"/>
+                <!-- MEZCLA SELECCIONADA -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/borde_celda"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mezcla seleccionada"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="#555555"
+                        android:letterSpacing="0.01"/>
+
+                    <TextView
+                        android:id="@+id/tvMezclaSeleccionada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mezcla Engorda 1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="6dp"/>
+
+                    <Button
+                        android:id="@+id/btnSeleccionarMezcla"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="CAMBIAR MEZCLA"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/green_primary"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"/>
+                </LinearLayout>
+
+                <!-- HORA -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/borde_celda"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora de dispensado"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="#555555"/>
+
+                    <TextView
+                        android:id="@+id/tvHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="08:00 AM"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="6dp"/>
+
+                    <Button
+                        android:id="@+id/btnSeleccionarHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="AJUSTAR HORARIO"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/green_primary"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"/>
+                </LinearLayout>
+
+                <!-- CANTIDAD -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/borde_celda"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cantidad a dispensar"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="#555555"/>
+
+                    <TextView
+                        android:id="@+id/tvCantidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="25 kg"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="6dp"/>
+
+                    <Button
+                        android:id="@+id/btnCantidadTolva"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="CONFIGURAR KG"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/green_primary"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"/>
+                </LinearLayout>
+
+                <!-- ESTADO -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/borde_celda"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado del Sistema"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:textColor="#555555"/>
+
+                    <TextView
+                        android:id="@+id/tvEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Activo"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_primary"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="6dp"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swTolvaActiva"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dispensador Automático"
+                        android:checked="true"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:thumbTint="@color/green_primary"
+                        app:trackTint="@color/green_light"
+                        app:switchPadding="12dp"/>
+                </LinearLayout>
+
+                <!-- HISTORIAL -->
+                <Button
+                    android:id="@+id/btnHistorialTolva"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="VER HISTORIAL"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/green_primary"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btnVolverConfiguracion"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="VOLVER"
+                    android:textStyle="bold"
+                    android:backgroundTint="#8E8E8E"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

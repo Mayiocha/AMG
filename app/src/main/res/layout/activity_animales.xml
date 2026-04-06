@@ -95,6 +95,17 @@
                         android:padding="12dp"/>
                 </TableRow>
             </TableLayout>
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="VOLVER"
+                android:textStyle="bold"
+                android:backgroundTint="#8E8E8E"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                android:layout_marginTop="24dp"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

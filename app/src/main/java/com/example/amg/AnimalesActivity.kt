@@ -23,10 +23,15 @@ class AnimalesActivity : AppCompatActivity() {
 
         tableLayout = findViewById(R.id.tableAnimales)
         val btnAgregar = findViewById<Button>(R.id.btnAgregarAnimal)
+        val btnVolver = findViewById<Button>(R.id.btnVolver)
 
         btnAgregar.setOnClickListener {
             // Navegación a la pantalla de registro
             startActivity(Intent(this, AgregarAnimalActivity::class.java))
+        }
+
+        btnVolver.setOnClickListener {
+            finish()
         }
     }
 

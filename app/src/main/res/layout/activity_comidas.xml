@@ -60,28 +60,6 @@
             android:backgroundTint="@color/green_primary"
             android:textColor="@color/white"
             app:cornerRadius="8dp"
-            android:layout_marginBottom="16dp"/>
-
-        <Button
-            android:id="@+id/btnHistorialTolva"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="HISTORIAL DE TOLVA"
-            android:textStyle="bold"
-            android:backgroundTint="@color/green_primary"
-            android:textColor="@color/white"
-            app:cornerRadius="8dp"
-            android:layout_marginBottom="16dp"/>
-
-        <Button
-            android:id="@+id/btnListaMezclas"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="VER MEZCLAS ACTIVAS"
-            android:textStyle="bold"
-            android:backgroundTint="@color/green_primary"
-            android:textColor="@color/white"
-            app:cornerRadius="8dp"
             android:layout_marginBottom="24dp"/>
 
         <Button
