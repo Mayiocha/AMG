@@ -58,8 +58,9 @@ class AgregarAnimalActivity : AppCompatActivity() {
         val adapterTipo = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, arrayOf("Vaca", "Toro", "Ternera"))
         spTipo.adapter = adapterTipo
 
-        // IDs de lotes existentes (Semilla)
-        val adapterLote = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, arrayOf("1", "2", "3"))
+        // Cargar lotes reales desde la base de datos
+        val lotIds = dbHelper.getAllLotIds()
+        val adapterLote = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, lotIds)
         spLote.adapter = adapterLote
     }
 

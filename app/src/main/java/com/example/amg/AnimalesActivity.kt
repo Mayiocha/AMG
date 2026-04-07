@@ -13,46 +13,87 @@ class AnimalesActivity : AppCompatActivity() {
 
     private lateinit var tableLayout: TableLayout
     private lateinit var dbHelper: AdminSQLiteOpenHelper
+    private lateinit var spinnerLote: Spinner
+
+    // Almacena el lot_id seleccionado (null = todos)
+    private var lotIdSeleccionado: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animales)
 
-        // Inicializar persistencia
-        dbHelper = AdminSQLiteOpenHelper(this)
+        dbHelper     = AdminSQLiteOpenHelper(this)
+        tableLayout  = findViewById(R.id.tableAnimales)
+        spinnerLote  = findViewById(R.id.spinnerLote)
 
-        tableLayout = findViewById(R.id.tableAnimales)
-        val btnAgregar = findViewById<Button>(R.id.btnAgregarAnimal)
-        val btnVolver = findViewById<Button>(R.id.btnVolver)
+        configurarSpinnerLote()
 
-        btnAgregar.setOnClickListener {
-            // Navegación a la pantalla de registro
+        findViewById<Button>(R.id.btnAgregarAnimal).setOnClickListener {
             startActivity(Intent(this, AgregarAnimalActivity::class.java))
         }
 
-        btnVolver.setOnClickListener {
-            finish()
+        findViewById<Button>(R.id.btnGestionLotes).setOnClickListener {
+            startActivity(Intent(this, GestionLotesActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener { finish() }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Reconstruir spinner por si se agregó un lote nuevo
+        configurarSpinnerLote()
+    }
+
+    private fun configurarSpinnerLote() {
+        val lotIds   = dbHelper.getAllLotIds()
+        val opciones = mutableListOf("Todos los lotes") +
+                lotIds.map { "Lote $it" }
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, opciones)
+        spinnerLote.adapter = adapter
+
+        // Conservar selección previa si sigue existiendo
+        val selAnterior = lotIdSeleccionado
+        spinnerLote.setSelection(0)  // default: todos
+        if (selAnterior != null) {
+            val idx = lotIds.indexOf(selAnterior.toString())
+            if (idx >= 0) spinnerLote.setSelection(idx + 1)
+        }
+
+        spinnerLote.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: android.view.View?, pos: Int, id: Long) {
+                lotIdSeleccionado = if (pos == 0) null else lotIds[pos - 1].toInt()
+                mostrarAnimales()
+            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
         }
     }
 
-    // El método onResume asegura que la lista se refresque al volver de agregar un animal
-    override fun onResume() {
-        super.onResume()
-        mostrarAnimales()
-    }
-
     private fun mostrarAnimales() {
-        // Limpiamos las filas previas excepto el encabezado (índice 0)
+        // Limpia filas excepto encabezado
         if (tableLayout.childCount > 1) {
             tableLayout.removeViews(1, tableLayout.childCount - 1)
         }
 
-        // Recuperar lista desde la base de datos local
-        val listaAnimales = dbHelper.getAllAnimals()
+        val listaAnimales = dbHelper.getAnimalsByLot(lotIdSeleccionado)
+
+        if (listaAnimales.isEmpty()) {
+            val row = TableRow(this)
+            val tv = TextView(this).apply {
+                text = "Sin animales en este lote"
+                setTextColor(ContextCompat.getColor(this@AnimalesActivity, R.color.black))
+                setPadding(16, 28, 16, 28)
+                gravity = Gravity.CENTER
+            }
+            val params = TableRow.LayoutParams().apply { span = 3 }
+            row.addView(tv, params)
+            tableLayout.addView(row)
+            return
+        }
 
         for (animal in listaAnimales) {
             val row = TableRow(this).apply {
-                // Usamos tu drawable de bordes para cada celda
                 setBackgroundResource(R.drawable.borde_celda)
                 val params = TableLayout.LayoutParams(
                     TableLayout.LayoutParams.MATCH_PARENT,
@@ -62,55 +103,46 @@ class AnimalesActivity : AppCompatActivity() {
                 layoutParams = params
             }
 
-            // Columna: Tag/Arete (Negrita para identificación)
             val tvTag = TextView(this).apply {
                 text = animal.tagId
-                setTextColor(ContextCompat.getColor(context, R.color.black))
+                setTextColor(ContextCompat.getColor(this@AnimalesActivity, R.color.black))
                 setTypeface(null, Typeface.BOLD)
                 setPadding(16, 28, 16, 28)
                 gravity = Gravity.CENTER
             }
-
-            // Columna: Categoría (Vaca/Toro/Ternera)
             val tvTipo = TextView(this).apply {
                 text = animal.category
-                setTextColor(ContextCompat.getColor(context, R.color.black))
+                setTextColor(ContextCompat.getColor(this@AnimalesActivity, R.color.black))
                 setPadding(16, 28, 16, 28)
                 gravity = Gravity.CENTER
             }
-
-            // Columna: Peso (En verde para resaltar dato productivo)
             val tvPeso = TextView(this).apply {
                 text = "${animal.weight} kg"
-                setTextColor(ContextCompat.getColor(context, R.color.green_primary))
+                setTextColor(ContextCompat.getColor(this@AnimalesActivity, R.color.green_primary))
                 setTypeface(null, Typeface.BOLD)
                 setPadding(16, 28, 16, 28)
                 gravity = Gravity.CENTER
             }
 
-            // Agregar celdas a la fila
             row.addView(tvTag)
             row.addView(tvTipo)
             row.addView(tvPeso)
 
-            // Listener para interactuar con el registro (puedes añadir el Detalle aquí)
             row.setOnClickListener {
-                val intent = Intent(this, DetalleAnimalActivity::class.java)
-
-                // Pasamos los datos que existen en tu modelo Animal
-                intent.putExtra("ID", animal.id.toString())
-                intent.putExtra("TAG_ID", animal.tagId)
-                intent.putExtra("CATEGORY", animal.category)
-                intent.putExtra("RACE", animal.race)
-                intent.putExtra("WEIGHT", "${animal.weight} kg")
-                intent.putExtra("MONTHS", "${animal.monthOld} meses")
-                intent.putExtra("LOT", "Lote ${animal.lotId}")
-                intent.putExtra("HEALTHY", if (animal.isHealthy) "Saludable" else "En tratamiento")
-
+                val intent = Intent(this, DetalleAnimalActivity::class.java).apply {
+                    putExtra("ANIMAL_ID", animal.id ?: -1)
+                    putExtra("ID",        animal.id.toString())
+                    putExtra("TAG_ID",    animal.tagId)
+                    putExtra("CATEGORY",  animal.category)
+                    putExtra("RACE",      animal.race)
+                    putExtra("WEIGHT",    "${animal.weight} kg")
+                    putExtra("MONTHS",    "${animal.monthOld} meses")
+                    putExtra("LOT",       animal.lotId.toString())
+                    putExtra("HEALTHY",   if (animal.isHealthy) "Saludable" else "En tratamiento")
+                }
                 startActivity(intent)
             }
 
-            // Agregar la fila completa a la tabla
             tableLayout.addView(row)
         }
     }

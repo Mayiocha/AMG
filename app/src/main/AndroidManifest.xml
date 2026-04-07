@@ -17,6 +17,8 @@
         <activity android:name=".AnimalesActivity" android:exported="false" />
         <activity android:name=".DetalleAnimalActivity" android:exported="false" />
         <activity android:name=".AgregarAnimalActivity" android:exported="false" />
+        <activity android:name=".EditarAnimalActivity" android:exported="false" />
+        <activity android:name=".GestionLotesActivity" android:exported="false" />
         <activity android:name=".ConfiguracionTolvaActivity"/>
 
         <activity

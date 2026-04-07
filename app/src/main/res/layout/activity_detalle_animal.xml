@@ -165,10 +165,23 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnVolverDetalle"
+            android:id="@+id/btnEditarAnimal"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="24dp"
+            android:text="EDITAR ANIMAL"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green_primary"
+            app:cornerRadius="8dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnVolverDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
             android:text="VOLVER AL LISTADO"
             android:textStyle="bold"
             android:backgroundTint="#8E8E8E"
