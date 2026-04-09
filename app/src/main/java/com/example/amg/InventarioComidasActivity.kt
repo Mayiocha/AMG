@@ -33,7 +33,7 @@ class InventarioComidasActivity : AppCompatActivity() {
         dbHelper = AdminSQLiteOpenHelper(this)
         tableInventario = findViewById(R.id.tableInventario)
         val btnAgregar = findViewById<Button>(R.id.btnAgregarComida)
-        val btnVolver = findViewById<Button>(R.id.btnVolver)
+        val btnVolver  = findViewById<Button>(R.id.btnVolver)
 
         actualizarTabla()
 
@@ -57,7 +57,7 @@ class InventarioComidasActivity : AppCompatActivity() {
             tableInventario.removeViews(1, tableInventario.childCount - 1)
         }
 
-        val inventoryItems = dbHelper.getInventoryDetails()
+        val inventoryItems = dbHelper.getInventoryWithIds()
 
         for (item in inventoryItems) {
             val row = TableRow(this).apply {
@@ -68,10 +68,12 @@ class InventarioComidasActivity : AppCompatActivity() {
                 )
                 params.setMargins(0, 4, 0, 4)
                 layoutParams = params
+                isClickable = true
+                isFocusable = true
             }
 
             val tvNombre = TextView(this).apply {
-                text = item.first
+                text = item.name
                 setTextColor(ContextCompat.getColor(context, R.color.black))
                 setTypeface(null, Typeface.BOLD)
                 setPadding(16, 28, 16, 28)
@@ -79,14 +81,14 @@ class InventarioComidasActivity : AppCompatActivity() {
             }
 
             val tvUnidad = TextView(this).apply {
-                text = item.third
+                text = item.unit
                 setTextColor(ContextCompat.getColor(context, R.color.black))
                 setPadding(16, 28, 16, 28)
                 gravity = Gravity.CENTER
             }
 
             val tvCantidad = TextView(this).apply {
-                text = item.second.toString()
+                text = item.quantity.toString()
                 setTextColor(ContextCompat.getColor(context, R.color.green_primary))
                 setTypeface(null, Typeface.BOLD)
                 setPadding(16, 28, 16, 28)
@@ -97,7 +99,18 @@ class InventarioComidasActivity : AppCompatActivity() {
             row.addView(tvUnidad)
             row.addView(tvCantidad)
 
+            // Abrir detalle al presionar la fila
+            row.setOnClickListener {
+                val intent = Intent(this, DetalleComidaActivity::class.java).apply {
+                    putExtra("ITEM_ID",       item.id)
+                    putExtra("ITEM_NOMBRE",   item.name)
+                    putExtra("ITEM_CANTIDAD", item.quantity)
+                    putExtra("ITEM_UNIDAD",   item.unit)
+                }
+                startActivity(intent)
+            }
+
             tableInventario.addView(row)
         }
     }
-}
+}

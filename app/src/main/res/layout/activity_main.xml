@@ -41,7 +41,7 @@
         <Button
             android:id="@+id/btnIrAnimales"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:text="GESTIÓN DE ANIMALES"
             android:textColor="@color/white"
             android:backgroundTint="@color/green_primary"
@@ -53,7 +53,7 @@
         <Button
             android:id="@+id/btnIrComidas"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:text="COMIDAS Y MEZCLAS"
             android:textColor="@color/white"
             android:backgroundTint="@color/green_primary"
@@ -65,7 +65,7 @@
         <Button
             android:id="@+id/btnConfiguracion"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:text="CONFIGURACIÓN TOLVA"
             android:textColor="@color/green_primary"
             android:backgroundTint="@color/white"

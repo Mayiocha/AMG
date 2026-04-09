@@ -5,134 +5,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_primary"
-    android:fitsSystemWindows="true"> <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/bg_card"
-            android:padding="20dp"
-            android:elevation="8dp">
+            android:elevation="8dp"
+            android:padding="24dp">
 
+            <!-- Encabezado -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Agregar Alimento"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 android:textColor="@color/green_primary"
                 android:gravity="center"
+                android:letterSpacing="0.02"
                 android:layout_marginBottom="4dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registro para inventario de comidas"
+                android:text="Registro de nuevo insumo en el inventario"
                 android:textSize="14sp"
                 android:textColor="#757575"
                 android:gravity="center"
-                android:layout_marginBottom="20dp"/>
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="24dp"/>
 
-            <EditText
-                android:id="@+id/etNombreComida"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre del alimento"
-                android:background="@drawable/borde_celda"
-                android:padding="14dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="12dp"/>
-
-            <EditText
-                android:id="@+id/etTipoComida"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tipo (Silo, Grano, Balanceado...)"
-                android:background="@drawable/borde_celda"
-                android:padding="14dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="12dp"/>
-
+            <!-- Sección: Identificación -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="12dp">
+                android:orientation="vertical"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Identificación"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/green_primary"
+                    android:letterSpacing="0.01"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etNombreComida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del alimento"
+                    android:background="@drawable/borde_celda"
+                    android:padding="14dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:inputType="textCapWords"
+                    android:layout_marginBottom="12dp"/>
+
+            </LinearLayout>
+
+            <!-- Sección: Stock inicial -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Stock Inicial"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/green_primary"
+                    android:layout_marginBottom="12dp"/>
+
                 <EditText
                     android:id="@+id/etCantidadComida"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Cantidad disponible"
                     android:inputType="numberDecimal"
                     android:background="@drawable/borde_celda"
                     android:padding="14dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unidad de medida:"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#555555"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"/>
+
                 <Spinner
                     android:id="@+id/spinnerUnidad"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
                     android:background="@drawable/borde_celda"
-                    android:padding="10dp"/>
+                    android:spinnerMode="dropdown"/>
+
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/etPrecioUnidad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Precio por unidad"
-                android:inputType="numberDecimal"
-                android:background="@drawable/borde_celda"
-                android:padding="14dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="12dp"/>
-
-            <EditText
-                android:id="@+id/etStockMinimo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Stock mínimo"
-                android:inputType="numberDecimal"
-                android:background="@drawable/borde_celda"
-                android:padding="14dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="24dp"/>
-
+            <!-- Botón Guardar -->
             <Button
                 android:id="@+id/btnGuardarComida"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:text="GUARDAR ALIMENTO"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/green_primary"
-                android:textStyle="bold"
-                android:padding="14dp"
                 app:cornerRadius="8dp"
+                android:elevation="4dp"
                 android:layout_marginBottom="12dp"/>
 
+            <!-- Botón Cancelar -->
             <Button
                 android:id="@+id/btnVolverComida"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:text="CANCELAR"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 android:backgroundTint="#8E8E8E"
                 android:textColor="@color/white"
-                app:cornerRadius="8dp"
-                android:padding="14dp"/>
+                app:cornerRadius="8dp"/>
 
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -45,7 +45,7 @@
             <Button
                 android:id="@+id/btnAgregarComida"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:text="+ AGREGAR NUEVA COMIDA"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/green_primary"

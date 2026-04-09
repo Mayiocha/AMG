@@ -68,7 +68,7 @@
                 <Button
                     android:id="@+id/btnAgregarAnimal"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="56dp"
                     android:text="+ AGREGAR NUEVO ANIMAL"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/green_primary"
@@ -81,7 +81,7 @@
                 <Button
                     android:id="@+id/btnGestionLotes"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="56dp"
                     android:text="ADMINISTRAR LOTES"
                     android:textColor="@color/white"
                     android:backgroundTint="#5D8A3C"

@@ -11,14 +11,19 @@
         <activity android:name=".HistorialTolvaActivity" />
         <activity android:name=".GestionMezclasActivity" />
         <activity android:name=".AgregarNuevaMezclaActivity" />
+        <activity android:name=".DetalleMezclaActivity" android:exported="false" />
+        <activity android:name=".EditarMezclaActivity" android:exported="false" />
         <activity android:name=".AgregarComidaActivity" />
         <activity android:name=".InventarioComidasActivity" />
+        <activity android:name=".DetalleComidaActivity"  android:exported="false" />
+        <activity android:name=".EditarComidaActivity"   android:exported="false" />
         <activity android:name=".ComidasActivity" />
         <activity android:name=".AnimalesActivity" android:exported="false" />
         <activity android:name=".DetalleAnimalActivity" android:exported="false" />
         <activity android:name=".AgregarAnimalActivity" android:exported="false" />
         <activity android:name=".EditarAnimalActivity" android:exported="false" />
         <activity android:name=".GestionLotesActivity" android:exported="false" />
+        <activity android:name=".EditarLoteActivity"   android:exported="false" />
         <activity android:name=".ConfiguracionTolvaActivity"/>
 
         <activity
