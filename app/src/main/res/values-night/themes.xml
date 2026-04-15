@@ -5,5 +5,13 @@
         <item name="colorSecondary">@color/green_light</item>
         <item name="android:textColorHint">#757575</item>
         <item name="editTextColor">@color/black</item>
+        
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/green_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/green_primary</item>
+        <item name="android:windowLightNavigationBar">false</item>
     </style>
 </resources>
