@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_primary"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:elevation="8dp"
+            android:padding="24dp">
+
+            <!-- Encabezado -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Editar Alimento"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:gravity="center"
+                android:letterSpacing="0.02"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvSubtituloEditarComida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modifica los datos del alimento registrado"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Sección: Identificación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Identificación"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/green_primary"
+                    android:letterSpacing="0.01"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etEditarNombreComida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del alimento"
+                    android:background="@drawable/borde_celda"
+                    android:padding="14dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:inputType="text"
+                    android:layout_marginBottom="12dp"/>
+
+            </LinearLayout>
+
+            <!-- Sección: Stock -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Stock Actual"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/green_primary"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etEditarCantidadComida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Cantidad disponible"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/borde_celda"
+                    android:padding="14dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unidad de medida:"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#555555"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"/>
+
+                <Spinner
+                    android:id="@+id/spEditarUnidadComida"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/borde_celda"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+
+            <!-- Botón Guardar -->
+            <Button
+                android:id="@+id/btnGuardarEditarComida"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="GUARDAR CAMBIOS"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_primary"
+                app:cornerRadius="8dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Botón Cancelar -->
+            <Button
+                android:id="@+id/btnCancelarEdicionComida"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="CANCELAR"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#8E8E8E"
+                app:cornerRadius="8dp"
+                android:padding="14dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnEliminarRegistroComida"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ELIMINAR REGISTRO"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#D32F2F"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                android:padding="14dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,8 +6,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.amg.model.Animal
 import com.example.amg.model.Lot
+import com.example.amg.model.Rutina
 
-class AdminSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "joee", null, 4) {
+class AdminSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "joee", null, 5) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         // 1. Crear Tabla de Lotes
@@ -71,6 +72,19 @@ class AdminSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "joee"
     )
 """.trimIndent())
 
+        // 5. Crear Tabla de Rutinas de la Tolva
+        db?.execSQL("""
+    CREATE TABLE routines (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT NOT NULL,
+        hora TEXT NOT NULL,
+        mixture_id INTEGER NOT NULL,
+        cantidad_kg REAL NOT NULL,
+        activa INTEGER NOT NULL DEFAULT 1,
+        FOREIGN KEY(mixture_id) REFERENCES mixtures(id)
+    )
+""".trimIndent())
+
         // 3. INSERTAR DATOS SEMILLA — 3 lotes para los animales de prueba
         db?.execSQL("INSERT INTO lots (quantity, stage) VALUES (10, 1)") // Lote 1
         db?.execSQL("INSERT INTO lots (quantity, stage) VALUES (8, 1)")  // Lote 2
@@ -110,6 +124,7 @@ class AdminSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "joee"
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db?.execSQL("DROP TABLE IF EXISTS routines")
         db?.execSQL("DROP TABLE IF EXISTS animals")
         db?.execSQL("DROP TABLE IF EXISTS lots")
         db?.execSQL("DROP TABLE IF EXISTS mixture_ingredients")
@@ -549,4 +564,80 @@ class AdminSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context, "joee"
     }
 
     data class Mixture(val id: Int, val name: String, val type: String, val quantity: Float, val unit: String, val status: String)
+
+    // ──────────────────────────────────────────────
+    // ROUTINES (Rutinas de la Tolva)
+    // ──────────────────────────────────────────────
+
+    fun getAllRoutines(): List<Rutina> {
+        val list = mutableListOf<Rutina>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("""
+            SELECT r.id, r.nombre, r.hora, r.mixture_id, m.name, r.cantidad_kg, r.activa
+            FROM routines r
+            JOIN mixtures m ON r.mixture_id = m.id
+            ORDER BY r.hora ASC
+        """.trimIndent(), null)
+        if (cursor.moveToFirst()) {
+            do {
+                list.add(
+                    Rutina(
+                        id          = cursor.getInt(0),
+                        nombre      = cursor.getString(1),
+                        hora        = cursor.getString(2),
+                        mixtureId   = cursor.getInt(3),
+                        mixtureName = cursor.getString(4),
+                        cantidadKg  = cursor.getFloat(5),
+                        activa      = cursor.getInt(6) == 1
+                    )
+                )
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return list
+    }
+
+    fun insertRoutine(rutina: Rutina): Long {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put("nombre",     rutina.nombre)
+            put("hora",       rutina.hora)
+            put("mixture_id", rutina.mixtureId)
+            put("cantidad_kg",rutina.cantidadKg)
+            put("activa",     if (rutina.activa) 1 else 0)
+        }
+        val id = db.insert("routines", null, values)
+        db.close()
+        return id
+    }
+
+    fun updateRoutine(rutina: Rutina): Int {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put("nombre",     rutina.nombre)
+            put("hora",       rutina.hora)
+            put("mixture_id", rutina.mixtureId)
+            put("cantidad_kg",rutina.cantidadKg)
+            put("activa",     if (rutina.activa) 1 else 0)
+        }
+        val rows = db.update("routines", values, "id = ?", arrayOf(rutina.id.toString()))
+        db.close()
+        return rows
+    }
+
+    fun updateRutinaActiva(id: Int, activa: Boolean): Int {
+        val db = this.writableDatabase
+        val values = ContentValues().apply { put("activa", if (activa) 1 else 0) }
+        val rows = db.update("routines", values, "id = ?", arrayOf(id.toString()))
+        db.close()
+        return rows
+    }
+
+    fun deleteRoutine(id: Int): Int {
+        val db = this.writableDatabase
+        val rows = db.delete("routines", "id = ?", arrayOf(id.toString()))
+        db.close()
+        return rows
+    }
 }

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/grayBackground"
+    android:layout_marginBottom="10dp">
+
+    <!-- Barra superior (verde si activa, gris si inactiva) -->
+    <View
+        android:id="@+id/viewRutinaBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/green_primary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Fila superior: nombre + checkbox -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvRutinaNombre"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Rutina Mañana"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <CheckBox
+                android:id="@+id/cbRutinaActiva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activa"
+                android:textSize="13sp"
+                android:textColor="#555555"
+                android:buttonTint="@color/green_primary"/>
+        </LinearLayout>
+
+        <!-- Divisor -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Hora -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HORA"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#888888"
+                android:letterSpacing="0.08"
+                android:minWidth="90dp"/>
+
+            <TextView
+                android:id="@+id/tvRutinaHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08:00"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"/>
+        </LinearLayout>
+
+        <!-- Mezcla -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MEZCLA"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#888888"
+                android:letterSpacing="0.08"
+                android:minWidth="90dp"/>
+
+            <TextView
+                android:id="@+id/tvRutinaMezcla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mezcla Engorda 1"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Cantidad -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CANTIDAD"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#888888"
+                android:letterSpacing="0.08"
+                android:minWidth="90dp"/>
+
+            <TextView
+                android:id="@+id/tvRutinaCantidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25 kg"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Botones Editar / Eliminar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditarRutina"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="44dp"
+                android:text="EDITAR"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_primary"
+                android:textStyle="bold"
+                app:cornerRadius="6dp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnEliminarRutina"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="44dp"
+                android:text="ELIMINAR"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:backgroundTint="#C62828"
+                android:textStyle="bold"
+                app:cornerRadius="6dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

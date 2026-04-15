@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_primary"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:elevation="8dp"
+            android:padding="24dp">
+
+            <!-- Encabezado -->
+            <TextView
+                android:id="@+id/tvTituloEditarLote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Editar Lote"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:gravity="center"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvSubtituloEditarLote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modifica los datos del lote seleccionado"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Capacidad del lote -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Capacidad del lote"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#444444"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/etEditarCapacidad"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Número de animales"
+                android:inputType="number"
+                android:background="@drawable/bg_card"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:textColor="#222222"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Etapa de producción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Etapa de producción"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#444444"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spEditarEtapa"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_card"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Botón Guardar -->
+            <Button
+                android:id="@+id/btnGuardarLote"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="GUARDAR CAMBIOS"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_primary"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                app:cornerRadius="8dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Botón Cancelar -->
+            <Button
+                android:id="@+id/btnCancelarEditarLote"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="CANCELAR"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#8E8E8E"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Botón Eliminar -->
+            <Button
+                android:id="@+id/btnEliminarRegistroLote"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ELIMINAR LOTE"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#D32F2F"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

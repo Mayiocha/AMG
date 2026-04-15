@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/grayBackground"
+    android:layout_marginBottom="12dp">
+
+    <!-- Barra superior de color del lote -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/green_primary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Encabezado: Lote # y fecha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvLoteNumero"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Lote #1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"/>
+
+            <TextView
+                android:id="@+id/tvLoteFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2026-01-01"
+                android:textSize="12sp"
+                android:textColor="#888888"/>
+        </LinearLayout>
+
+        <!-- Divisor -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Total de animales -->
+        <TextView
+            android:id="@+id/tvLoteTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total de animales: 0"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="2dp"/>
+
+        <!-- Etapa de producción -->
+        <TextView
+            android:id="@+id/tvLoteEtapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Etapa: —"
+            android:textSize="13sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Desglose por categoría con etiquetas limpias -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Vacas -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VACAS"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#888888"
+                    android:letterSpacing="0.08"/>
+
+                <TextView
+                    android:id="@+id/tvLoteVacas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary"/>
+            </LinearLayout>
+
+            <!-- Toros -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOROS"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#888888"
+                    android:letterSpacing="0.08"/>
+
+                <TextView
+                    android:id="@+id/tvLoteToros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary"/>
+            </LinearLayout>
+
+            <!-- Terneras -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TERNERAS"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#888888"
+                    android:letterSpacing="0.08"/>
+
+                <TextView
+                    android:id="@+id/tvLoteTerneras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

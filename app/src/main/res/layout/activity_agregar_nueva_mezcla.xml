@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_primary"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:elevation="8dp"
+            android:padding="24dp">
+
+            <!-- Encabezado -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Mezcla"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_primary"
+                android:gravity="center"
+                android:letterSpacing="0.02"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Formulación y seguimiento de dietas"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Sección: Identificación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Identificación y Tipo"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/green_primary"
+                    android:letterSpacing="0.01"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etNombreMezcla"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre de la mezcla"
+                    android:background="@drawable/borde_celda"
+                    android:padding="14dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:inputType="textCapWords"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo:"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#555555"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp"/>
+
+                <Spinner
+                    android:id="@+id/spTipoMezcla"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/borde_celda"
+                    android:layout_marginBottom="12dp"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+
+            <!-- Sección: Detalles Físicos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grayBackground"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Datos de la Mezcla"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/green_primary"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:id="@+id/llContenedorIngredientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btnAgregarIngrediente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:text="+ AÑADIR INGREDIENTE"
+                    android:textSize="12sp"
+                    android:backgroundTint="#8E8E8E"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="24dp"/>
+
+                <CheckBox
+                    android:id="@+id/cbEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¿La mezcla está activa?"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:checked="true"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGuardarMezcla"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="GUARDAR MEZCLA"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green_primary"
+                app:cornerRadius="8dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="CANCELAR"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="#8E8E8E"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
